@@ -178,7 +178,7 @@ class TripService {
                 // TODO utiliser resolve et reject en fonction du résultat de la  recherche 
 
                 this.trips.forEach(trip => {
-                    if (trip.name == tripName) {
+                    if (trip.name === tripName) {
                         // ◦ Renvoyer l’objet Trip correspondant au nom du voyage en paramètre.
                         resolve(trip)
                     }
@@ -238,8 +238,8 @@ tripService.findByName('Toulouse').then(trip => console.log(trip)).catch(err => 
 
 //Chainer l’utilisation des services TripService et PriceService pour récupérer le prix du voyage 'Rio de Janeiro'.
 tripService.findByName('Rio de Janeiro').then(trip => priceService.findPriceByTripId(trip.id)
-    .then(price => console.log(price)).catch(errr => console.log(err))).catch(err => console.log(err))
+    .then(price => console.log(price)).catch(err => console.log(err))).catch(err => console.log(err))
 
 //Chainer l’utilisation des services TripService et PriceService pour récupérer le prix du voyage 'Nantes'.
 tripService.findByName('Nantes').then(trip => priceService.findPriceByTripId(trip.id)
-    .then(price => console.log(price)).catch(errr => console.log(err))).catch(err => console.log(err))
+    .then(price => console.log(price)).catch(err => console.log(err))).catch(err => console.log(err))
